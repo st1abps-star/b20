@@ -6,7 +6,7 @@ const Video = () => {
       {/* Fallback image for when video is loading or fails */}
       <img
         className="absolute inset-0 w-full h-full object-cover z-0"
-        src="https://www.pexels.com/video/a-person-holding-a-ring-box-6570503"
+        src="https://www.pexels.com/photo/hands-of-bride-and-groom-13293704"
         alt="Creative workspace background"
         loading="lazy"
       />
