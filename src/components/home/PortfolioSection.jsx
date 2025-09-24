@@ -86,15 +86,21 @@ const PortfolioSection = () => {
                   className="video-card flex-shrink-0 w-64 sm:w-72 lg:w-80 xl:w-96 video-glass gpu-accelerated"
                 >
                   <div className="relative aspect-video bg-black rounded-lg sm:rounded-xl overflow-hidden">
+                    {/* Logo masking overlay for portfolio videos */}
+                    <div className="absolute top-2 right-2 sm:top-3 sm:right-3 w-16 h-6 sm:w-18 sm:h-7 bg-black/70 backdrop-blur-sm rounded-sm z-20 pointer-events-none"></div>
+                    
                     <iframe
                       className="absolute top-0 left-0 w-full h-full"
-                      src={`https://www.youtube.com/embed/${video.videoId}?autoplay=0&mute=1&controls=1&modestbranding=1&rel=0&showinfo=0`}
+                      src={`https://www.youtube.com/embed/${video.videoId}?autoplay=0&mute=1&controls=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&cc_load_policy=0&fs=0&disablekb=1&branding=0`}
                       title={`Portfolio video ${index + 1}`}
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowFullScreen
                       loading="lazy"
                     />
+                    
+                    {/* Additional gradient overlay to mask YouTube branding */}
+                    <div className="absolute top-0 right-0 w-20 h-10 sm:w-22 sm:h-12 bg-gradient-to-bl from-black/50 via-black/25 to-transparent pointer-events-none"></div>
                   </div>
                 </div>
               ))}

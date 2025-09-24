@@ -18,41 +18,41 @@ const Projects = () => {
 
   // Teasers section - replaced with provided video IDs
   const teasers = [
-    { videoId: 'QGsa5QB5gK4' },
-    { videoId: '5fR4MErzYeI' },
-    { videoId: '2qFnRXpSFn8' },
-    { videoId: '7bZ5MKY6pfU' },
-    { videoId: 'QstSPHan4oE' },
-    { videoId: 'HMJyD-kPWek' },
-    { videoId: 'zd5De3LAMQc' },
-    { videoId: 'HMJyD-kPWek' },
-    { videoId: 'YM1TZnbcbOs' },
-    { videoId: 'pRya97qUJMs' },
-    { videoId: 'AqqGxOrwv_g' }
+    { videoId: 'QGsa5QB5gK4', title: 'Wedding Teaser 1' },
+    { videoId: '5fR4MErzYeI', title: 'Wedding Teaser 2' },
+    { videoId: '2qFnRXpSFn8', title: 'Wedding Teaser 3' },
+    { videoId: '7bZ5MKY6pfU', title: 'Wedding Teaser 4' },
+    { videoId: 'QstSPHan4oE', title: 'Wedding Teaser 5' },
+    { videoId: 'HMJyD-kPWek', title: 'Wedding Teaser 6' },
+    { videoId: 'zd5De3LAMQc', title: 'Wedding Teaser 7' },
+    { videoId: 'HMJyD-kPWek', title: 'Wedding Teaser 8' },
+    { videoId: 'YM1TZnbcbOs', title: 'Wedding Teaser 9' },
+    { videoId: 'pRya97qUJMs', title: 'Wedding Teaser 10' },
+    { videoId: 'AqqGxOrwv_g', title: 'Wedding Teaser 11' }
   ]
 
   // Highlights section - starts with last provided videoId, rest unchanged
   const highlights = [
-    { videoId: '2qFnRXpSFn8' },
-    { videoId: 'CevxZvSJLk8' },
-    { videoId: 'kffacxfA7G4' },
-    { videoId: 'qeMFqkcPYcg' },
-    { videoId: 'SQoA_wjmE9w' },
-    { videoId: 'ZbZSe6N_BXs' },
-    { videoId: 'HEXWRTEbj1I' },
-    { videoId: 'U9t-slLl69E' },
-    { videoId: 'iik25wqIuFo' },
-    { videoId: 'C0DPdy98e4c' },
-    { videoId: 'YQHsXMglC9A' },
-    { videoId: 'AdUw5RdyZxI' },
-    { videoId: 'hTWKbfoikeg' },
-    { videoId: 'NUYvbT6vTPs' },
-    { videoId: 'RgKAFK5djSk' },
-    { videoId: 'uelHwf8o7_U' },
-    { videoId: 'EhxJLojIE_o' },
-    { videoId: 'KQ6zr6kCPj8' },
-    { videoId: 'MtN1YnoL46Q' },
-    { videoId: 'sOnqjkJTMaA' }
+    { videoId: '2qFnRXpSFn8', title: 'Wedding Highlight 1' },
+    { videoId: 'CevxZvSJLk8', title: 'Wedding Highlight 2' },
+    { videoId: 'kffacxfA7G4', title: 'Wedding Highlight 3' },
+    { videoId: 'qeMFqkcPYcg', title: 'Wedding Highlight 4' },
+    { videoId: 'SQoA_wjmE9w', title: 'Wedding Highlight 5' },
+    { videoId: 'ZbZSe6N_BXs', title: 'Wedding Highlight 6' },
+    { videoId: 'HEXWRTEbj1I', title: 'Wedding Highlight 7' },
+    { videoId: 'U9t-slLl69E', title: 'Wedding Highlight 8' },
+    { videoId: 'iik25wqIuFo', title: 'Wedding Highlight 9' },
+    { videoId: 'C0DPdy98e4c', title: 'Wedding Highlight 10' },
+    { videoId: 'YQHsXMglC9A', title: 'Wedding Highlight 11' },
+    { videoId: 'AdUw5RdyZxI', title: 'Wedding Highlight 12' },
+    { videoId: 'hTWKbfoikeg', title: 'Wedding Highlight 13' },
+    { videoId: 'NUYvbT6vTPs', title: 'Wedding Highlight 14' },
+    { videoId: 'RgKAFK5djSk', title: 'Wedding Highlight 15' },
+    { videoId: 'uelHwf8o7_U', title: 'Wedding Highlight 16' },
+    { videoId: 'EhxJLojIE_o', title: 'Wedding Highlight 17' },
+    { videoId: 'KQ6zr6kCPj8', title: 'Wedding Highlight 18' },
+    { videoId: 'MtN1YnoL46Q', title: 'Wedding Highlight 19' },
+    { videoId: 'sOnqjkJTMaA', title: 'Wedding Highlight 20' }
   ]
 
   gsap.registerPlugin(ScrollTrigger)
@@ -122,6 +122,7 @@ const Projects = () => {
             videos={teasers} 
             gridCols="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
             aspectRatio="aspect-video"
+            useCustomThumbnails={true}
           />
         </section>
 
@@ -134,6 +135,7 @@ const Projects = () => {
             videos={highlights} 
             gridCols="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
             aspectRatio="aspect-video"
+            useCustomThumbnails={true}
           />
         </section>
       </div>

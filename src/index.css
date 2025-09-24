@@ -697,6 +697,162 @@ iframe {
     height: 100%;
 }
 
+/* YouTube logo hiding and branding removal */
+.youtube-embed-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.youtube-embed-container::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 80px;
+    height: 32px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 100%);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 4px;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Hide YouTube watermark and branding elements */
+iframe[src*="youtube.com"] {
+    position: relative;
+}
+
+/* Custom overlay to mask YouTube logo area */
+.video-logo-mask {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: clamp(60px, 15vw, 100px);
+    height: clamp(30px, 8vw, 50px);
+    background: linear-gradient(135deg, 
+        rgba(0, 0, 0, 0.7) 0%, 
+        rgba(0, 0, 0, 0.3) 50%, 
+        transparent 100%);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    pointer-events: none;
+    z-index: 15;
+    border-radius: 0 var(--border-radius-lg) 0 8px;
+}
+
+/* Enhanced video container with logo masking */
+.video-container-enhanced {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius-lg);
+}
+
+.video-container-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: clamp(70px, 18vw, 120px);
+    height: clamp(35px, 9vw, 60px);
+    background: radial-gradient(ellipse at top right, 
+        rgba(0, 0, 0, 0.8) 0%, 
+        rgba(0, 0, 0, 0.4) 50%, 
+        transparent 70%);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    pointer-events: none;
+    z-index: 20;
+    border-radius: 0 var(--border-radius-lg) 0 12px;
+}
+
+/* Mobile-specific logo masking */
+@media (max-width: 767px) {
+    .video-logo-mask {
+        width: 50px;
+        height: 25px;
+        top: 4px;
+        right: 4px;
+    }
+    
+    .video-container-enhanced::before {
+        width: 60px;
+        height: 30px;
+        top: 6px;
+        right: 6px;
+    }
+}
+
+/* Tablet-specific adjustments */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .video-logo-mask {
+        width: 80px;
+        height: 40px;
+        top: 8px;
+        right: 8px;
+    }
+    
+    .video-container-enhanced::before {
+        width: 90px;
+        height: 45px;
+        top: 10px;
+        right: 10px;
+    }
+}
+
+/* Desktop and large screen adjustments */
+@media (min-width: 1024px) {
+    .video-logo-mask {
+        width: 100px;
+        height: 50px;
+        top: 12px;
+        right: 12px;
+    }
+    
+    .video-container-enhanced::before {
+        width: 120px;
+        height: 60px;
+        top: 15px;
+        right: 15px;
+    }
+}
+
+/* Alternative method: Custom thumbnail overlay */
+.custom-video-thumbnail {
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s var(--transition-smooth);
+}
+
+.custom-video-thumbnail::after {
+    content: '▶';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(2rem, 5vw, 4rem);
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    width: clamp(60px, 15vw, 100px);
+    height: clamp(60px, 15vw, 100px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+    z-index: 25;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .custom-video-thumbnail:hover::after {
+        background: rgba(211, 253, 80, 0.9);
+        color: black;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
 /* Responsive grid systems */
 .responsive-grid-2 {
     display: grid;
